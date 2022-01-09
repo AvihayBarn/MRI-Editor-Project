@@ -15,8 +15,8 @@ namespace MRI_Editor_Project
 {
     public partial class MRIEditorInterface : Form
     {
-     
-        private MRIList mri_list = new MRIList();
+
+        private ISaveable mri_list;
        
         public MRIEditorInterface()
         {
