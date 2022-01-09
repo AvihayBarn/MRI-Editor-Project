@@ -7,9 +7,5 @@ using System.Windows.Forms;
 
 namespace MRI_Editor_Project
 {
-    interface IMRIData
-    {
-         IMRIData init(DataGridViewRow row);
-        
-    }
+   
 }

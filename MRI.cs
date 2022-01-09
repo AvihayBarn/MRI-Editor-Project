@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace MRI_Editor_Project
 {
-    class MRI : IMRIData
+    class MRI 
     {
 
 
@@ -17,7 +17,8 @@ namespace MRI_Editor_Project
         private Boolean vnc_supported;
 
         
-        public IMRIData init(DataGridViewRow row)
+        
+        public MRI(DataGridViewRow row)
         {
 
             
@@ -28,7 +29,7 @@ namespace MRI_Editor_Project
             this.comments = row.Cells[5].Value != null ? row.Cells[5].Value.ToString() : "null";
             this.vnc_supported = Convert.ToBoolean(row.Cells[4].Value);
 
-            return this;
+            
         }
 
         public override string ToString()

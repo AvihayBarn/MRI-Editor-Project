@@ -9,17 +9,17 @@ using System.Windows.Forms;
 
 namespace MRI_Editor_Project 
 {
-    class MRIList<IMRIData> : List<IMRIData>, ISaveable
+    class MRIList : List<MRI>, ISaveable
     {
         public static readonly List<string> powers = new List<string> { "1.5T", "3.0T" };
         public static readonly List<string> vendors = new List<string> { "Siemens", "Phillips", "GE" };
-        List<IMRIData> mri_data_list = new List<IMRIData>();
+        List<MRI> mri_data_list = new List<MRI>();
 
 
         private string readyToSave()
         {
             string ready_to_save = "";
-            foreach (IMRIData mri in mri_data_list)
+            foreach (MRI mri in mri_data_list)
             {
                 Console.WriteLine(mri.ToString());
                 ready_to_save += mri.ToString() + "\n";
@@ -95,6 +95,7 @@ namespace MRI_Editor_Project
 
                     if (File.Exists(save_as.FileName))
                     {
+                        
                         Console.WriteLine(save_as.FileName);
                         File.Delete(save_as.FileName);
                     }
@@ -107,8 +108,9 @@ namespace MRI_Editor_Project
                         if ((string)row.Cells[0].Value != "" && (string)row.Cells[1].Value != "")
                         {
 
-                            MRI mri = new MRI();
-                            mri_data_list.Add((IMRIData)mri.init(row));
+                           
+                            mri_data_list.Add(new MRI(row));
+                            
                         }
                     }
 
