@@ -1,7 +1,7 @@
 ﻿
 namespace MRI_Editor_Project
 {
-    partial class Form1
+    partial class MRIEditorInterface
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace MRI_Editor_Project
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MRIEditorInterface));
             this.dataSet1 = new System.Data.DataSet();
             this.MRISData = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewComboBoxColumn();

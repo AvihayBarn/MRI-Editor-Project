@@ -1,32 +1,36 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-
+using System.Windows.Forms;
 
 namespace MRI_Editor_Project
 {
-    class MRI : ISaveable
+    class MRI : IMRIData
     {
+
+
+        private string vendor;
+        private string power;
+        private string version;
+        private string os;
+        private string comments; 
+        private Boolean vnc_supported;
+
         
-
-        private string vendor { get; set; }
-        private string power{ get; set; }
-        private string version { get; set; }
-        private string os { get; set; }
-        private string comments { get; set; }
-        private Boolean vnc_supported { get; set; }
-       
-
-        public MRI(string vendor,string power,string version,string os,string comments,Boolean vnc_supported)
+        public IMRIData init(DataGridViewRow row)
         {
-            this.vendor = vendor;
-            this.power = power;
-            this.version = version;
-            this.os = os;
-            this.comments = comments;
-            this.vnc_supported = vnc_supported;
+
+            
+            this.vendor = (string)row.Cells[0].Value != "" ? Convert.ToString((row.Cells[0] as DataGridViewComboBoxCell).FormattedValue.ToString()) : "";
+            this.power = (string)row.Cells[1].Value != "" ? Convert.ToString((row.Cells[1] as DataGridViewComboBoxCell).FormattedValue.ToString()) : "";
+            this.version = row.Cells[2].Value != null ? row.Cells[2].Value.ToString() : "";
+            this.os = row.Cells[3].Value != null ? row.Cells[3].Value.ToString() : "null";
+            this.comments = row.Cells[5].Value != null ? row.Cells[5].Value.ToString() : "null";
+            this.vnc_supported = Convert.ToBoolean(row.Cells[4].Value);
+
+            return this;
         }
-        
+
         public override string ToString()
         {
             return vendor + "," + power + "," + version + "," + os + "," + vnc_supported.ToString() +","+comments;

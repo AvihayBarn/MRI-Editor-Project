@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace MRI_Editor_Project
 {
-    static class Program
+    static class MainApp
     {
         /// <summary>
         /// The main entry point for the application.
@@ -16,7 +16,7 @@ namespace MRI_Editor_Project
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new MRIEditorInterface());
         }
     }
 }

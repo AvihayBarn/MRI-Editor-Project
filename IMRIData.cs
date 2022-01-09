@@ -7,11 +7,9 @@ using System.Windows.Forms;
 
 namespace MRI_Editor_Project
 {
-
-    
-    interface ISaveable
+    interface IMRIData
     {
-        void save(DataGridView dataGridView);
-        void open(DataGridView dataGridView);
+         IMRIData init(DataGridViewRow row);
+        
     }
 }
