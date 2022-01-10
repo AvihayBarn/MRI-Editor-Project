@@ -110,7 +110,7 @@ namespace MRI_Editor_Project
                         if ((string)row.Cells[0].Value != "" && (string)row.Cells[1].Value != "")
                         {
 
-                           
+                         
                             mri_data_list.Add(new MRI(row));
                             
                         }
