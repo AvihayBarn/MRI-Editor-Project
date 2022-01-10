@@ -59,10 +59,12 @@ namespace MRI_Editor_Project
                         row.Cells[2].Value = mri_data[2];
                         row.Cells[3].Value = mri_data[3];
                         row.Cells[5].Value = mri_data[5];
+                        DataGridViewCheckBoxCell vnc = row.Cells[4] as DataGridViewCheckBoxCell;
                         if (mri_data[4].Equals("True"))
                         {
-                            row.Cells[4].Selected = true;
+                            vnc.Value = true;
                         }
+                        else vnc.Value = false;
 
 
                     }

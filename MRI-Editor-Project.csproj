@@ -46,7 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IMRIData.cs" />
     <Compile Include="MRIList.cs" />
     <Compile Include="ISaveable.cs" />
     <Compile Include="MRI.cs" />

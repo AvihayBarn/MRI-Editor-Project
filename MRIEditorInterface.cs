@@ -17,12 +17,14 @@ namespace MRI_Editor_Project
     {
 
         private ISaveable mri_list;
+
        
         public MRIEditorInterface()
         {
             InitializeComponent();
-            Column1.DataSource = MRIList.vendors;
-            Column2.DataSource = MRIList.powers;
+            Vendor.DataSource = MRIList.vendors;
+            Power.DataSource = MRIList.powers;
+            mri_list = new MRIList();
         }
         
         private void Form1_Load(object sender, EventArgs e)

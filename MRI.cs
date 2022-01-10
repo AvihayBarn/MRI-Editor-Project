@@ -22,12 +22,14 @@ namespace MRI_Editor_Project
         {
 
             
-            this.vendor = (string)row.Cells[0].Value != "" ? Convert.ToString((row.Cells[0] as DataGridViewComboBoxCell).FormattedValue.ToString()) : "";
-            this.power = (string)row.Cells[1].Value != "" ? Convert.ToString((row.Cells[1] as DataGridViewComboBoxCell).FormattedValue.ToString()) : "";
-            this.version = row.Cells[2].Value != null ? row.Cells[2].Value.ToString() : "";
-            this.os = row.Cells[3].Value != null ? row.Cells[3].Value.ToString() : "null";
-            this.comments = row.Cells[5].Value != null ? row.Cells[5].Value.ToString() : "null";
-            this.vnc_supported = Convert.ToBoolean(row.Cells[4].Value);
+            vendor = (string)row.Cells[0].Value != "" ? Convert.ToString((row.Cells[0] as DataGridViewComboBoxCell).FormattedValue.ToString()) : "";
+            power = (string)row.Cells[1].Value != "" ? Convert.ToString((row.Cells[1] as DataGridViewComboBoxCell).FormattedValue.ToString()) : "";
+            version = row.Cells[2].Value != null ? row.Cells[2].Value.ToString() : "";
+            os = row.Cells[3].Value != null ? row.Cells[3].Value.ToString() : "null";
+            comments = row.Cells[5].Value != null ? row.Cells[5].Value.ToString() : "null";
+            DataGridViewCheckBoxCell vnc = row.Cells["Vnc"] as DataGridViewCheckBoxCell;
+            bool isChecked = (bool)vnc.EditingCellFormattedValue;
+            vnc_supported = isChecked ? true : false;
 
             
         }
