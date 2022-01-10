@@ -32,6 +32,12 @@ namespace MRI_Editor_Project
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MRIEditorInterface));
             this.dataSet1 = new System.Data.DataSet();
             this.MRISData = new System.Windows.Forms.DataGridView();
+            this.Vendor = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Power = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.Version = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.OS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Vnc = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Comments = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,14 +47,8 @@ namespace MRI_Editor_Project
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.NewLine = new System.Windows.Forms.Button();
             this.DeleteLine = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.Guidness = new System.Windows.Forms.Label();
             this.Reset = new System.Windows.Forms.Button();
-            this.Vendor = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Power = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Version = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Vnc = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Comments = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MRISData)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -81,6 +81,42 @@ namespace MRI_Editor_Project
             this.MRISData.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.MRISData.Size = new System.Drawing.Size(735, 354);
             this.MRISData.TabIndex = 1;
+            // 
+            // Vendor
+            // 
+            this.Vendor.HeaderText = "Vendor";
+            this.Vendor.Name = "Vendor";
+            this.Vendor.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Vendor.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Power
+            // 
+            this.Power.HeaderText = "Power";
+            this.Power.Name = "Power";
+            this.Power.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Power.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Version
+            // 
+            this.Version.HeaderText = "Version";
+            this.Version.Name = "Version";
+            // 
+            // OS
+            // 
+            this.OS.HeaderText = "OS";
+            this.OS.Name = "OS";
+            // 
+            // Vnc
+            // 
+            this.Vnc.HeaderText = "VNC Supported";
+            this.Vnc.Name = "Vnc";
+            this.Vnc.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Vnc.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Comments
+            // 
+            this.Comments.HeaderText = "Comments";
+            this.Comments.Name = "Comments";
             // 
             // menuStrip1
             // 
@@ -161,16 +197,16 @@ namespace MRI_Editor_Project
             this.DeleteLine.UseVisualStyleBackColor = true;
             this.DeleteLine.Click += new System.EventHandler(this.DeleteLine_Click);
             // 
-            // label1
+            // Guidness
             // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(279, 39);
-            this.label1.MaximumSize = new System.Drawing.Size(1000, 1000);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(427, 75);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "This editor open and save MRI details in csv format as csv/txt files.\r\n\r\n\r\n";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Guidness.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Guidness.Location = new System.Drawing.Point(279, 39);
+            this.Guidness.MaximumSize = new System.Drawing.Size(1000, 1000);
+            this.Guidness.Name = "Guidness";
+            this.Guidness.Size = new System.Drawing.Size(427, 75);
+            this.Guidness.TabIndex = 7;
+            this.Guidness.Text = "This editor open and save MRI details in csv format as csv/txt files.\r\n\r\n\r\n";
+            this.Guidness.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // Reset
             // 
@@ -182,42 +218,6 @@ namespace MRI_Editor_Project
             this.Reset.UseVisualStyleBackColor = true;
             this.Reset.Click += new System.EventHandler(this.Reset_Click);
             // 
-            // Vendor
-            // 
-            this.Vendor.HeaderText = "Vendor";
-            this.Vendor.Name = "Vendor";
-            this.Vendor.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Vendor.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // Power
-            // 
-            this.Power.HeaderText = "Power";
-            this.Power.Name = "Power";
-            this.Power.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Power.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // Version
-            // 
-            this.Version.HeaderText = "Version";
-            this.Version.Name = "Version";
-            // 
-            // OS
-            // 
-            this.OS.HeaderText = "OS";
-            this.OS.Name = "OS";
-            // 
-            // Vnc
-            // 
-            this.Vnc.HeaderText = "VNC Supported";
-            this.Vnc.Name = "Vnc";
-            this.Vnc.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Vnc.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // Comments
-            // 
-            this.Comments.HeaderText = "Comments";
-            this.Comments.Name = "Comments";
-            // 
             // MRIEditorInterface
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -226,7 +226,7 @@ namespace MRI_Editor_Project
             this.CancelButton = this.NewLine;
             this.ClientSize = new System.Drawing.Size(987, 501);
             this.Controls.Add(this.Reset);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.Guidness);
             this.Controls.Add(this.DeleteLine);
             this.Controls.Add(this.NewLine);
             this.Controls.Add(this.MRISData);
@@ -257,7 +257,7 @@ namespace MRI_Editor_Project
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.Button NewLine;
         private System.Windows.Forms.Button DeleteLine;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label Guidness;
         private System.Windows.Forms.Button Reset;
         private System.Windows.Forms.DataGridViewComboBoxColumn Vendor;
         private System.Windows.Forms.DataGridViewComboBoxColumn Power;

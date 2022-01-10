@@ -5,6 +5,10 @@ using System.Windows.Forms;
 
 namespace MRI_Editor_Project
 {
+    /// <summary>
+    /// The MRI Class helps to store the data from the DataGridView into objects,
+    /// that it would be easier to save it in a file.
+    /// </summary>
     class MRI 
     {
 
@@ -17,7 +21,7 @@ namespace MRI_Editor_Project
         private Boolean vnc_supported;
 
         
-        
+     
         public MRI(DataGridViewRow row)
         {
 

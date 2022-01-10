@@ -9,13 +9,21 @@ using System.Windows.Forms;
 
 namespace MRI_Editor_Project 
 {
-    class MRIList : List<MRI>, ISaveable
+    /// <summary>
+    /// A class that represent a list of MRIs that it would be easier to save them in a file.
+    /// The class implement the interface ISaveable.
+    /// </summary>
+    class MRIList : ISaveable
     {
         public static readonly List<string> powers = new List<string> { "1.5T", "3.0T" };
         public static readonly List<string> vendors = new List<string> { "Siemens", "Phillips", "GE" };
         List<MRI> mri_data_list = new List<MRI>();
 
-
+        /// <summary>
+        /// A private method that organize all the MRIS data into one string variable ,
+        /// ready to be save in a file.
+        /// </summary>
+        /// <returns> string ready_to_save </returns>
         private string readyToSave()
         {
             string ready_to_save = "";
@@ -26,15 +34,18 @@ namespace MRI_Editor_Project
             }
             return ready_to_save;
         }
-
+        /// <summary>
+        /// This method reads a txt/csv file with MRI data and inserts it into the DataGridView.
+        /// </summary>
+        /// <param name="dataGridView"></param>
         public void open(DataGridView dataGridView)
         {
             OpenFileDialog open = new OpenFileDialog();
-            open.Title = "to select image";
-
+            open.Title = "Open MRI File";
             open.Filter = "All files(*.*)|*.*|All files(*.*)|*.*";
             open.FilterIndex = 100;
             open.RestoreDirectory = true;
+
             if (open.ShowDialog() == DialogResult.OK)
             {
                 try
@@ -79,6 +90,11 @@ namespace MRI_Editor_Project
                 }
             }
         }
+        /// <summary>
+        /// This method gets a dataGridView as parameter and saves all the data inside a txt/csv file.
+        /// this method will be activate when the "save" button will be clicked.
+        /// </summary>
+        /// <param name="dataGridView"></param>
         public void save(DataGridView dataGridView)
         {
 
